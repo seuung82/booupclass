@@ -75,7 +75,7 @@ const threadLiveFrame=document.createElement('iframe');threadLiveFrame.title='Th
 let currentEmbeddedThread='';
 function updateThreadLiveFrame(){
  const url=activeThread()?.url||FEATURED_THREAD;
- const match=url.match(/^https:\\/\\/(?:www\\.)?threads\\.(?:com|net)\\/(?:@[^/]+\\/post|t)\\/([A-Za-z0-9_-]+)/i);
+ const match=url.match(/^https:\/\/(?:www\.)?threads\.(?:com|net)\/(?:@[^/]+\/post|t)\/([A-Za-z0-9_-]+)/i);
  if(!match){threadLiveFrame.style.display='none';return}
  const embedUrl='https://www.threads.com/t/'+encodeURIComponent(match[1])+'/embed';
  if(embedUrl!==currentEmbeddedThread){currentEmbeddedThread=embedUrl;threadLiveFrame.src=embedUrl;}
